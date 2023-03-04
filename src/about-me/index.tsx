@@ -1,5 +1,3 @@
-import Header from '../header';
-
 export default function AboutMe() {
     return (
         <div>
