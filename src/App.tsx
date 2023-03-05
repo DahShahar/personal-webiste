@@ -12,12 +12,13 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Resume from './resume';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root/>,
+      element: <Root />,
       children: [
         {
           path: "/",
@@ -25,27 +26,40 @@ function App() {
         },
         {
           path: "/resume",
-          element: <Resume />
+          element: <Resume />,
         },
         {
           path: "/widgets",
           element: <Widgets />,
         },
-      ]
+      ],
     },
     {
       path: "*",
       element: <Navigate to="/" />,
-    }
+    },
   ]);
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#33691e",
+      },
+      secondary: {
+        main: "#558b2f",
+      },
+    },
+  });
+
   return (
-    <div className="App">
-      <head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </head>
-      <RouterProvider router={router} />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <head>
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
+        </head>
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   );
 }
 
