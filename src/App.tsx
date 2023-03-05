@@ -1,7 +1,6 @@
-import './App.css';
-import AboutMe from './about-me';
-import Resume from './resume';
-import Home from './home';
+// import './App.css';
+import About from './about';
+import Widgets from './widgets';
 import Root from './root';
 import {
   createBrowserRouter,
@@ -12,6 +11,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import Resume from './resume';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,15 +21,15 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home/>,
-        },
-        {
-          path: "/about",
-          element: <AboutMe />,
+          element: <About />,
         },
         {
           path: "/resume",
-          element: <Resume />,
+          element: <Resume />
+        },
+        {
+          path: "/widgets",
+          element: <Widgets />,
         },
       ]
     },
