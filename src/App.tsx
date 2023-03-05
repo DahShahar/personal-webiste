@@ -8,6 +8,10 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function App() {
   const router = createBrowserRouter([
@@ -37,6 +41,9 @@ function App() {
 
   return (
     <div className="App">
+      <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </head>
       <RouterProvider router={router} />
     </div>
   );
